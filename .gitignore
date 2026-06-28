@@ -1,0 +1,52 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# -----------------------------
+# Virtual Environment
+# -----------------------------
+venv/
+.env
+
+# -----------------------------
+# VS Code
+# -----------------------------
+.vscode/
+
+# -----------------------------
+# Airflow
+# -----------------------------
+airflow/logs/
+airflow/airflow.db
+airflow/airflow-webserver.pid
+airflow/airflow-scheduler.pid
+airflow/__pycache__/
+
+# -----------------------------
+# Spark
+# -----------------------------
+metastore_db/
+spark-warehouse/
+
+# -----------------------------
+# Generated Data
+# -----------------------------
+data/silver/
+data/gold/
+
+# ----------------------------------------
+# Raw Dataset
+# Keep the folder structure, but ignore the CSV files.
+# ----------------------------------------
+data/raw/*
+!data/raw/.gitkeep
+
+# -----------------------------
+# OS Files
+# -----------------------------
+.DS_Store
+Thumbs.db
