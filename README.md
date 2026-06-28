@@ -19,52 +19,7 @@ The final Gold layer provides business-ready insights including:
 
 The project follows the Medallion Architecture (Bronze → Silver → Gold), with Apache Airflow orchestrating the analytical pipeline.
 
-```mermaid
-flowchart LR
-
-    subgraph Bronze["Bronze Layer (Raw Data)"]
-        A[tracks.csv]
-        B[artists.csv]
-    end
-
-    subgraph Silver["Silver Layer (PySpark ETL)"]
-        C[silver_tracks.py]
-        D[tracks_clean.parquet]
-        E[silver_artists.py]
-        F[artists_clean.parquet]
-    end
-
-    subgraph Gold["Gold Layer (Analytics)"]
-        G[decade_summary.parquet]
-        H[explicit_summary.parquet]
-        I[popularity_summary.parquet]
-        J[instrumentalness_summary.parquet]
-    end
-
-    subgraph Airflow["Apache Airflow DAG"]
-        K[silver_tracks]
-        L[gold_decade_summary]
-        M[gold_explicit_summary]
-        N[gold_popularity_summary]
-        O[gold_instrumentalness_summary]
-    end
-
-    A --> C
-    B --> E
-
-    C --> D
-    E --> F
-
-    D --> G
-    D --> H
-    D --> I
-    D --> J
-
-    K --> L
-    K --> M
-    K --> N
-    K --> O
-```
+![Project Architecture](screenshots/architecture.png)
 
 ## Project Structure
 
